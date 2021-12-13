@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "676968930480",
+    "project_id": "swag-1a",
+    "storage_bucket": "swag-1a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:676968930480:android:77dbffcd49a15f14e72f75",
+        "android_client_info": {
+          "package_name": "com.swag.swag_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "676968930480-7qdugbl4vg1gcnh7bkisa1heeifcd2tc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMl3ocSAO1wN-JFFcg3650_b3VxKMV3Wc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "676968930480-7qdugbl4vg1gcnh7bkisa1heeifcd2tc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
