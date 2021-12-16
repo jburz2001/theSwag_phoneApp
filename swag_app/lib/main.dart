@@ -3,18 +3,26 @@ import 'package:flutter/material.dart';
 // import 'package:cloud_firestore/cloud_firestore.dart';
 
 void main() => runApp(MaterialApp(
-  home: Scaffold(
-    appBar: AppBar(
-      title: Text("SWAG"),
-      centerTitle: true,
-    ),
-
-    body: Center(
-      child: Text("Yoo o"),
-    ),
-
-    floatingActionButton: FloatingActionButton(
-      child: Text("hey"),
-      onPressed: () {},)
-  ),
+  home: Home(),
 ));
+
+class Home extends StatelessWidget {  
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("SWAG App"),
+        centerTitle: true,
+      ),
+
+      body: Center(
+        child: Text("Yoo o"),
+      ),
+      
+      floatingActionButton: FloatingActionButton(
+        child: Text("hey"),
+        onPressed: () {},
+      ),
+    );
+  }
+}
