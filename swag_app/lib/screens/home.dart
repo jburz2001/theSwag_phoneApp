@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:swag_app/screens/people.dart';
 
 class Home extends StatelessWidget {
   @override
@@ -50,7 +49,9 @@ class Home extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: TextButton.icon(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/notes');
+                  },
                   icon: Icon(Icons.note),
                   label: Text("Notes"),
                   style: TextButton.styleFrom(
