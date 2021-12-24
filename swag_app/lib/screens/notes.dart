@@ -16,6 +16,46 @@ class _NotesState extends State<Notes> {
         centerTitle: true,
         backgroundColor: Colors.blue[200],
       ),
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Expanded(
+              flex: 8,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  child: TextButton.icon(
+                    onPressed: () {},
+                    label: Text("notes"),
+                    icon: Icon(Icons.notes_outlined),
+                    style: TextButton.styleFrom(
+                      backgroundColor: Colors.amber,
+                    )
+                  ),
+                ),
+              )
+            ),
+            Expanded(
+              flex: 2,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  child: TextButton.icon(
+                    onPressed: () {},
+                    label: Text("Add Note"),
+                    icon: Icon(Icons.add),
+                    style: TextButton.styleFrom(
+                      backgroundColor: Colors.amber,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
