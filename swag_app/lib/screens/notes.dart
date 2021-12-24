@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:swag_app/note.dart';
 class Notes extends StatefulWidget {
   const Notes({ Key? key }) : super(key: key);
 
@@ -8,6 +8,12 @@ class Notes extends StatefulWidget {
 }
 
 class _NotesState extends State<Notes> {
+
+    List<Note> notes = [
+      Note("Title1", "Note1"),
+      Note("Title2", "Note2")
+    ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
