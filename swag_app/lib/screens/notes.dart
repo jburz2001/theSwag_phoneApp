@@ -11,8 +11,39 @@ class _NotesState extends State<Notes> {
 
     List<Note> notes = [
       Note("Title1", "Note1"),
-      Note("Title2", "Note2")
+      Note("Title2", "Note2"),
+      // Note("Title1", "Note1"),
+      // Note("Title2", "Note2"),
+      // Note("Title1", "Note1"),
+      // Note("Title2", "Note2"),
+      // Note("Title1", "Note1"),
+      // Note("Title2", "Note2"),
+      // Note("Title1", "Note1"),
+      // Note("Title2", "Note2"),
+      // Note("Title1", "Note1"),
+      // Note("Title2", "Note2"),
+      // Note("Title1", "Note1"),
+      // Note("Title2", "Note2"),
+      // Note("Title1", "Note1"),
+      // Note("Title2", "Note2"),                                          
     ];
+
+    Widget NoteTemplate(Note n){
+      return Card(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Text(
+              n.title
+            ),
+            SizedBox(height: 6.0),
+            Text(
+              n.note
+            )
+          ],
+        ),
+      );
+    }
 
   @override
   Widget build(BuildContext context) {
@@ -32,13 +63,8 @@ class _NotesState extends State<Notes> {
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Container(
-                  child: TextButton.icon(
-                    onPressed: () {},
-                    label: Text("notes"),
-                    icon: Icon(Icons.notes_outlined),
-                    style: TextButton.styleFrom(
-                      backgroundColor: Colors.amber,
-                    )
+                  child: Column(
+                    children: notes.map((n) => NoteTemplate(n)).toList(),
                   ),
                 ),
               )
