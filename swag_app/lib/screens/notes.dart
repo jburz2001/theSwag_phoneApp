@@ -10,22 +10,16 @@ class Notes extends StatefulWidget {
 class _NotesState extends State<Notes> {
 
     List<Note> notes = [
-      Note("Title1", "Note1"),
-      Note("Title2", "Note2"),
-      // Note("Title1", "Note1"),
-      // Note("Title2", "Note2"),
-      // Note("Title1", "Note1"),
-      // Note("Title2", "Note2"),
-      // Note("Title1", "Note1"),
-      // Note("Title2", "Note2"),
-      // Note("Title1", "Note1"),
-      // Note("Title2", "Note2"),
-      // Note("Title1", "Note1"),
-      // Note("Title2", "Note2"),
-      // Note("Title1", "Note1"),
-      // Note("Title2", "Note2"),
-      // Note("Title1", "Note1"),
-      // Note("Title2", "Note2"),                                          
+      Note(title: "Bob dropped off", note: "I dropped Bob off at the urgent care", author: "Justin"),
+      Note(title: "I need someone to pick Jane up from AA", note: "My car is out of gas so I cannot pick Jane up. Can someone else do this?", author: "Eamonn"),
+      Note(title: "I need someone to pick Jane up from AA", note: "My car is out of gas so I cannot pick Jane up. Can someone else do this?", author: "Eamonn"),
+      Note(title: "I need someone to pick Jane up from AA", note: "My car is out of gas so I cannot pick Jane up. Can someone else do this?", author: "Eamonn"),
+      Note(title: "I need someone to pick Jane up from AA", note: "My car is out of gas so I cannot pick Jane up. Can someone else do this?", author: "Eamonn"),
+      Note(title: "I need someone to pick Jane up from AA", note: "My car is out of gas so I cannot pick Jane up. Can someone else do this?", author: "Eamonn"),
+      Note(title: "I need someone to pick Jane up from AA", note: "My car is out of gas so I cannot pick Jane up. Can someone else do this?", author: "Eamonn"),
+      Note(title: "I need someone to pick Jane up from AA", note: "My car is out of gas so I cannot pick Jane up. Can someone else do this?", author: "Eamonn"),
+      Note(title: "I need someone to pick Jane up from AA", note: "My car is out of gas so I cannot pick Jane up. Can someone else do this?", author: "Eamonn"),
+      Note(title: "I need someone to pick Jane up from AA", note: "My car is out of gas so I cannot pick Jane up. Can someone else do this?", author: "Eamonn"),
     ];
 
     Widget NoteTemplate(Note n){
@@ -33,13 +27,33 @@ class _NotesState extends State<Notes> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Text(
-              n.title
+            ElevatedButton(
+              child: Text("Title: ${n.title}\n\n Author: ${n.author}"),
+              onPressed: () {
+                showModalBottomSheet<void>(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return Container(
+                      height: 300,
+                      color: Colors.amber,
+                      child: Center(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          mainAxisSize: MainAxisSize.min,
+                          children: <Widget>[
+                            Text(n.note),
+                            ElevatedButton(
+                              child: const Text('Close BottomSheet'),
+                              onPressed: () => Navigator.pop(context),
+                            )
+                          ],
+                        ),
+                      ),
+                    );
+                  },
+                );
+              },
             ),
-            SizedBox(height: 6.0),
-            Text(
-              n.note
-            )
           ],
         ),
       );
@@ -63,8 +77,10 @@ class _NotesState extends State<Notes> {
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Container(
-                  child: Column(
-                    children: notes.map((n) => NoteTemplate(n)).toList(),
+                  child: SingleChildScrollView(
+                    child: Column(
+                      children: notes.map((n) => NoteTemplate(n)).toList(),
+                    ),
                   ),
                 ),
               )

@@ -1,10 +1,11 @@
 class Note {
-  String title = "NO_TITLE";
-  String note = "NO_NOTE";
+  String title;
+  String note;
+  String author;
   
-  Note(this.title, this.note);
+  Note({ required this.title, required this.note, required this.author });
   
   void display() {
-    print("Title: $title \n Note: $note");
+    print("Title: $title \n Note: $note \n Author: $author");
   }
 }
